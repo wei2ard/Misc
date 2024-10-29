@@ -1,0 +1,35 @@
+name: Release
+
+on: 
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+env:
+  BUILD_SH: build.sh
+
+jobs:
+  Build:
+    name: "Release"
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - uses: actions/checkout@master
+      - name: 'Build'
+        run: |
+          chmod +x $BUILD_SH
+          ./$BUILD_SH
+
+      - name: 'Release'
+        uses: softprops/action-gh-release@master
+        with:
+          prerelease: false
+          generate_release_notes: false
+          tag_name: 'Release'
+          files: |
+            MemToolkitNX.zip
+            MHR.zip
+            mhz.zip
+            stress-nx.zip
+            UltraCam.zip
