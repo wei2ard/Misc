@@ -1,0 +1,15 @@
+# Monster Hunter Rise JP 15.0.1
+# BID: 5CE1FFBE4B433343
+
+unsafeCheck: false
+
+ALL_FPS:
+  # Internal FPS lock
+  -
+    type: evaluate_write
+    address: [MAIN, 0x128CEEB8, 0x434]
+    value_type: float
+    value: FPS_LOCK_TARGET
+  -
+    type: block
+    what: timing
