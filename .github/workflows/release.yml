@@ -26,10 +26,11 @@ jobs:
         with:
           prerelease: false
           generate_release_notes: false
-          tag_name: 'Release'
+          tag_name: 'latest'
           files: |
             MemToolkitNX.zip
             MHR.zip
             mhz.zip
             stress-nx.zip
             UltraCam.zip
+            hbmenu.nsp
