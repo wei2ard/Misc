@@ -15,6 +15,7 @@ function bulk() {
   done
 }
 repos=(
+linkalho
 MemToolkitNX
 MHR
 mhz
